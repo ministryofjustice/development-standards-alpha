@@ -1,0 +1,15 @@
+title: MOJ Digital Probation Services - Development
+
+permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: "standards"
+    values:
+      standard: true
+  -
+    scope:
+      path: "guides"
+    values:
+      guide: true
