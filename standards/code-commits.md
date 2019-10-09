@@ -5,29 +5,18 @@ category: Code Standards
 
 ## Commit best practice
 
-Commit messages should follow the suggest best-suggested practice: 
-
+General guidance on commit messages can be found in the (GDS way commit messages section)[https://gds-way.cloudapps.digital/standards/git.html#commit-messages] and how to style commit messages.
+Typically commit messages should:
+- A commit should only be for one story
+- The first line should have the story number and a title for the change
 - Separate subject from the body with a blank line
-- Limit the subject line to 50 characters
-- Capitalize the subject line
-- Do not end the subject line with a period
-- Use the imperative mood in the subject line, for example Update dependencies to latest version.
-- Wrap the body at 72 characters
-- Use the body to explain what and why vs how
-
-## Squishing your commits
-
-Commits should also be squashed before creating a PR, or optionally you can use the squishing merging feature on Github. 
-
-## Commit message structure
-
-The commit comment should take the format of story number, story title, a brief description and any other relevant points.
+- Use the body to explain the what and why of the change along with any relevant detail.
 
 ### Example
 
 ```
 
-#PCS-1234 - Add search functionality to the homepage. 
+#PCS-1234 - Add search functionality to the homepage.
 
  - This only affects the homepage and has introduced a dependency on Redis to power the search.
  - Added call to search endpoint
@@ -36,7 +25,6 @@ The commit comment should take the format of story number, story title, a brief 
 
 ```
 
-## Further reading
+## Squishing your commits
 
- - [How to write a Git commit message](https://chris.beams.io/posts/git-commit/)
- - [Squash your commits](https://github.blog/2016-04-01-squash-your-commits/) 
+Commits should also be squashed before creating a PR, or optionally you can use the squishing merging feature on Github.

@@ -2,7 +2,7 @@
 
 This guide documents the coding standards and quality control tools proposed for use
 as part of the Digital Probation Services, this builds on top of the guidance
-provided in the [MOJ technical guidance](https://ministryofjustice.github.io/technical-guidance)
+provided in the [MOJ technical guidance](https://ministryofjustice.github.io/technical-guidance) and the [The GDS Way](https://gds-way.cloudapps.digital/)
 
 ## Standards
 
