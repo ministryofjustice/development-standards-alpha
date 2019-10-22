@@ -47,16 +47,32 @@ One of the main issues with branching strategies is that it can prevent code bei
 - Extensive code reviews can be laborious
 - Significant new features can be complicated to role out
 - A merged feature that is in testing could prevent things like hotfixes being applied to production
-- Marge conflicts
+- Merge conflicts
 
-## Mitigating the problems with feature branching 
+## Mitigating the problems with feature branching
 
-Using in-code strategies such as **feature toggles** and **UI last** can help mitigate some of the problems with feature branching.
+Using in-code strategies such as **feature toggles**, **UI last**, **splitting features into multiple deployments** and **reversible deployments** can help mitigate some of the problems with feature branching.
 
 ### Feature toggles
 
-Using in code configuration to turn features on and off 
+Using in code configuration to turn features on and off
+
+### Splitting features into multiple deployments
+Where possible, deploy things in multiple stages so that if stuff breaks you can quickly identify the problem and fix it.
+
+This way you can integrate stuff into the master branch quicker and get feedback on your work earlier.
+
+If a branch becomes difficult to review because of a large number of commits, consider whether any of that work can be deployed in isolation. If so, then you can [cherry-pick](https://git-scm.com/docs/git-cherry-pick) changes into new, smaller feature branches.
 
 ### UI last
+With significant changes to API endpoints, you could create a new endpoint instead of editing the existing one; same could be applied to a UI change where you could copy a page, make your changes and tie it all together at the end when you're ready to release the change to users.
 
-With significant changes to API endpoints, you could create a new endpoint instead of editing the existing one; same could be applied to a UI change where you could copy a page, make your changes and tie it all together at the end when you're ready to deploy.
+### Make deployments reversable
+You should be able to safely rollback any deployment.
+
+This can be tricky when data is involved. For example, if you drop a column in your database as part of a larger code change, then the previous version of the code won't work properly, so your deploy will require downtime, and you won't be able to roll back if the build doesn't work.
+
+The safest way to make these kind of changes is in stages, e.g.
+- https://www.brunton-spall.co.uk/post/2014/05/06/database-migrations-done-right/
+- https://stripe.com/gb/blog/online-migrations
+- https://samsaffron.com/archive/2018/03/22/managing-db-schema-changes-without-downtime
