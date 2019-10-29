@@ -4,22 +4,7 @@ category: Code Standards
 # Java Language Conventions
 
 ## Code style
-Teams should adopt a consistent coding style, and use tooling to automatically check
-that it is being followed.
-
-We recommend following the [Google Style Guide](https://google.github.io/styleguide/javaguide.html).
-This has formatters which can be imported into [IntelliJ](https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml) or [Eclipse](https://github.com/google/styleguide/blob/gh-pages/eclipse-java-google-style.xml).
-
-Having a chosen style is more important than having the perfect style, since house styles need maintaining and can encourage [bikeshedding](https://en.wikipedia.org/wiki/Law_of_triviality).
-
-You should also run a static analysis tool as part of your CI build - this will let the committer know straight away if their IDE is not set up correctly or they have checked in something without the IDE autoformatting it. This allows the reviewer of the PR to focus on the actual changes. Static analysis tools for Java include [SonarQube](https://www.sonarqube.org/), [Codacy](https://www.codacy.com/), [FindBugs](http://findbugs.sourceforge.net/) and [CheckStyle](http://checkstyle.sourceforge.net/).
-
-### Introducing a code style to existing projects
-Introducing a new coding convention to an existing project will flag up a lot of violations.
-
-It's simplest to fix these in one go, when there are not many other branches being worked on.
-
-`git rebase -Xignore-space-change master` is a helpful command for resolving conflicts with branches if the whitespace conventions have changed.
+Teams should follow a consistent coding style, and enforce it with a linting tool. See [Linting Rules - Java Projects](/standards/linting-rules/#java-projects).
 
 ## JDK
 New versions of OpenJDK are released on a 6 monthly cycle. You should choose an up to date JDK and continue updating your JDK to keep pace with new releases. Not updating makes it harder to update in the future.
